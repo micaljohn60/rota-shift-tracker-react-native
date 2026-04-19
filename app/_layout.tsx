@@ -1,24 +1,17 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+import { Stack } from "expo-router";
+import { useEffect, useState } from "react";
+import { initDatabase } from "../src/services/database";
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
+  const [dbReady, setDbReady] = useState(false);
 
-  return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
-  );
+  useEffect(() => {
+    initDatabase()
+      .then(() => setDbReady(true))
+      .catch(console.error);
+  }, []);
+
+  if (!dbReady) return null; // wait until db is ready before rendering anything
+
+  return <Stack screenOptions={{ headerShown: false }} />;
 }
