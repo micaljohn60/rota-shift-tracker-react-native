@@ -17,17 +17,14 @@ A React Native (Expo) iOS app that parses shift schedules from SMS using AI, tra
 
 ## Screenshots
 
-<div align="center">
-| | |
-|:---:|:---:|
-| **Home** | **Add Shift** |
-| ![Home](screenshots/G1-Home.PNG) | ![Add Shift](screenshots/G2-AddShift.PNG) |
-| **AI Preview** | **Weekly Report** |
-| ![AI Parsed](screenshots/G3-AddShiftList.PNG) | ![Report](screenshots/G4-Report.PNG) |
-| **Calendar — Week** | **Calendar — Month** |
-| ![Week](screenshots/G5-Calander.PNG) | ![Month](screenshots/G6-Calander-Month.PNG) |
- 
-</div>
+|                                               |                                             |
+| :-------------------------------------------: | :-----------------------------------------: |
+|                   **Home**                    |                **Add Shift**                |
+|       ![Home](screenshots/G1-Home.PNG)        |  ![Add Shift](screenshots/G2-AddShift.PNG)  |
+|                **AI Preview**                 |              **Weekly Report**              |
+| ![AI Parsed](screenshots/G3-AddShiftList.PNG) |    ![Report](screenshots/G4-Report.PNG)     |
+|              **Calendar — Week**              |            **Calendar — Month**             |
+|     ![Week](screenshots/G5-Calander.PNG)      | ![Month](screenshots/G6-Calander-Month.PNG) |
 
 ---
 
