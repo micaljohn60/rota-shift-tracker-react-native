@@ -3,7 +3,7 @@ import { ParsedShift } from "../types";
 import { todayString } from "../utils/time";
 
 const API_KEY = process.env.EXPO_PUBLIC_GEMINI_API_KEY ?? "";
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${API_KEY}`;
 
 export async function parseShiftWithAI(
   smsText: string,
@@ -43,11 +43,8 @@ Even if there is only one shift, return an array:
     }),
   });
 
-  console.log(response.status);
-
   if (!response.ok) {
     console.log(response.status);
-    console.log(API_KEY);
     const err = await response.text();
     console.log(err);
     throw new Error(`Gemini API error ${response.status}: ${err}`);
